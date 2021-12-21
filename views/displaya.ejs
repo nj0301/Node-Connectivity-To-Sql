@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <% rows.forEach((inf)=>{ %>
+        <p><%= inf.Name %></p>
+        <p><%= inf.Phone %></p>
+    <%})%> -->
+
+
+    <div class="table-data">
+        <h2>Display Data using Node.js & MySQL</h2>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Id</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Dept</th>
+                    <th>Course</th>
+                    <th>Teacher</th>
+                    <th>Sport</th>
+                </tr>
+                <%
+                if(rows.length!=0){
+                var i=1;
+                rows.forEach(function(data){
+                %>
+                <tr>
+                    <td><%=data.Name %></td>
+                    <td><%=data.ID %></td>
+                    <td><%=data.Phone %></td>
+                    <td><%=data.Gender %></td>
+                    <td><%=data.DeptName %></td>
+                    <td><%=data.CourseName %></td>
+                    <td><%=data.TeacherName %></td>
+                    <td><%=data.SportsName %></td>
+                </tr>
+                <%  i++; }) %>
+                <% } else{ %>
+                    <tr>
+                        <td colspan="7">No Data Found</td>
+                    </tr>
+                <% } %>
+            </table>
+            </div>
+</body>
+</html>
